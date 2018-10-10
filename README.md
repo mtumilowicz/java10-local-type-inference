@@ -1,6 +1,5 @@
 # java10-local-type-inference
-Gentle introduction to Java 10 local variable type inference
-and factory methods for collections.
+Gentle introduction to Java 10 local variable type inference.
 
 _Reference_: https://blog.codefx.org/java/java-10-var-type-inference/  
 _Reference_: https://www.journaldev.com/19871/java-10-local-variable-type-inference
@@ -26,24 +25,24 @@ can only be used in places where the compiler expects a type name, but
 everywhere else it’s a valid identifier. That means that only classes 
 called var will no longer work.
 
-**It can be used only for "local variable declarations with initializers".**
+* It can be used only for "local variable declarations with initializers".
+    ```
+    // none of this works
+    var ints = {0, 1, 2};
+    var appendSpace = a -> a + " ";
+    var x = 1, y = 2;
+    ```
 
-```
-// none of this works
-var ints = {0, 1, 2};
-var appendSpace = a -> a + " ";
-var x = 1, y = 2;
-```
-
-**The only other eligible spots besides local variables are for loops and try-with-resources blocks.**
-```
-for (var number : numbers) {
-	System.out.println(number);
-}
-```
-
-```
-try (var linesStream = Files.lines(Paths.get("src/test/java/LocalTypeInferenceTest.java"))) {
-    linesStream.takeWhile(e -> !e.contains("public")).forEachOrdered(System.out::println);
-}
-```
+* The only other eligible spots besides local variables are for loops 
+and try-with-resources blocks.
+    ```
+    for (var number : numbers) {
+        System.out.println(number);
+    }
+    ```
+    
+    ```
+    try (var linesStream = Files.lines(Paths.get("src/test/java/LocalTypeInferenceTest.java"))) {
+        linesStream.takeWhile(e -> !e.contains("public")).forEachOrdered(System.out::println);
+    }
+    ```
