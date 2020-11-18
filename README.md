@@ -51,4 +51,7 @@ and try-with-resources blocks.
 * Where can var `NOT` be used?
     * method parameters, method return types, fields
     * why?
-        * these types are 
+        * these types are part of a class's API - best to be explicit
+        * they are written into the class file
+        * they affect binary compatibility
+        * too easy to introduce errors by inadvertently changing an inferred type
