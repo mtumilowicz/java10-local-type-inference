@@ -1,8 +1,10 @@
 # java10-local-type-inference
 Gentle introduction to Java 10 local variable type inference.
 
-_Reference_: https://blog.codefx.org/java/java-10-var-type-inference/  
-_Reference_: https://www.journaldev.com/19871/java-10-local-variable-type-inference
+* references
+    * https://blog.codefx.org/java/java-10-var-type-inference/  
+    * https://www.journaldev.com/19871/java-10-local-variable-type-inference
+    * [Var with Style: Local Variable Type Inference in Java 10 by Stuart Marks](https://www.youtube.com/watch?v=786iemaCJHU)
 
 # preface
 **Type inference** refers to the automatic detection of the data type of an expression 
@@ -46,3 +48,7 @@ and try-with-resources blocks.
         linesStream.takeWhile(e -> !e.contains("public")).forEachOrdered(System.out::println);
     }
     ```
+* Where can var `NOT` be used?
+    * method parameters, method return types, fields
+    * why?
+        * these types are 
